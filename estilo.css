@@ -1,0 +1,33 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    background-image: url(Planet\ 2k.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#supra-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#calculator{
+    height: 650px;
+    width: 375px;
+    background-color: #3c3c3c;
+    border-radius: 5px;
+    padding: 20px;
+    padding-top: 65px;
+}
+
+#calculator-screen{
+    background-color: #808273;
+    width: 100%;
+    position: relative;
+    height: 20%;
+
+}
