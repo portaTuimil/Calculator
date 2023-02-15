@@ -2,7 +2,7 @@ body {
     margin: 0px;
     padding: 0px;
     height: 100vh;
-    background-image: url(Planet\ 2k.png);
+    /*background-image: url(Planet\ 2k.png);*/
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,5 +29,62 @@ body {
     width: 100%;
     position: relative;
     height: 20%;
-
+    display: flex;
+    flex-direction: column;
 }
+
+/*Key Pad*/
+#calculator-keys{
+    display: grid;
+    margin-top: 5%;
+    height: 75%;
+    width: 100%;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr) ;
+}
+
+.button-div{
+    height: 100%;
+    width: 100%;
+}
+
+.button{
+    height: 100%;
+    width: 100%;
+    border-color: #3c3c3c;
+    border-width: 1px;
+}
+
+.button.number{
+    background-color: #878787;
+}
+
+.button.clear{
+    background-color: #e5b748;
+}
+
+.button:hover {
+    filter: brightness(85%);
+}
+
+/*Screen*/
+#screen-div{
+    height: 60%;
+    width: 100%;
+}
+
+#result-div{
+    height: 40%;
+    width: 100%;
+}
+
+@font-face {
+    font-family:digital-7mono;
+    src: url("digital-7\ \(mono\).ttf");
+}
+
+output{
+    font-family: digital-7mono;
+    font-size: 50px
+}
+
