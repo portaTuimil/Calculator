@@ -71,11 +71,15 @@ body {
 #screen-div{
     height: 60%;
     width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 #result-div{
     height: 40%;
     width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 25px;
 }
 
 @font-face {
@@ -83,8 +87,19 @@ body {
     src: url("digital-7\ \(mono\).ttf");
 }
 
-output{
+*{
+    font-size: 30px;
+}
+
+#screen{
     font-family: digital-7mono;
     font-size: 50px
 }
 
+#result{
+    font-family: digital-7mono;
+    font-size: 30px;
+    display: block; 
+    width:100%; 
+    text-align:right;
+}
