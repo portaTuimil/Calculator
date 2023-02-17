@@ -47,7 +47,17 @@ button.forEach(button =>{button.addEventListener('click', (event)=>{
             } else if (isNaN(parseInt(id)) == false && operator !==''){
                 secondValue+= id;
             } else if (isNaN(parseInt(id)) == true && operator ==''){
-                operator +=id;
+                if (id == '.'){
+                    if (operator == ''){
+                        firstValue += id;
+                    } else if (operator !== ''){
+                        secondValue+=id;
+                    }else{
+                        alert('How in the earth did you get here')
+                    }
+                }else{
+                    operator +=id;
+                }
             }
             else{
                 alert('Thats not posible')
@@ -57,22 +67,22 @@ button.forEach(button =>{button.addEventListener('click', (event)=>{
     //Pantalla
     switch (operator){
          case '+':
-            result = parseInt(firstValue) + parseInt(secondValue)
+            result = parseFloat(firstValue) + parseFloat(secondValue)
             break
         case '-':
-            result = parseInt(firstValue) - parseInt(secondValue)
+            result = parseFloat(firstValue) - parseFloat(secondValue)
             break
         case '*':
-            result = parseInt(firstValue) * parseInt(secondValue)
+            result = parseFloat(firstValue) * parseFloat(secondValue)
             break
         case '/':
-            result = parseInt(firstValue) / parseInt(secondValue)
+            result = parseFloat(firstValue) / parseFloat(secondValue)
             break
         case '^':
-            result = parseInt(firstValue) ** parseInt(secondValue)
+            result = parseFloat(firstValue) ** parseFloat(secondValue)
             break
         case '%':
-            result = parseInt(firstValue) % parseInt(secondValue)
+            result = parseFloat(firstValue) % parseFloat(secondValue)
             break
     }
     if (isNaN(result)){
