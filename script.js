@@ -50,16 +50,17 @@ button.forEach(button =>{button.addEventListener('click', (event)=>{
                 if (id == '.'){
                     if (operator == ''){
                         firstValue += id;
-                    } else if (operator !== ''){
-                        secondValue+=id;
-                    }else{
+                    } else{
                         alert('How in the earth did you get here')
                     }
                 }else{
                     operator +=id;
                 }
-            }
-            else{
+            } else if (isNaN(parseInt(id)) == true && operator !==''){
+                if (id == '.'){
+                    secondValue+=id;
+                }
+            } else{
                 alert('Thats not posible')
             }
         }
