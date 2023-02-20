@@ -51,9 +51,9 @@ button.forEach(button =>{button.addEventListener('click', (event)=>{
                     if (operator == ''){
                         firstValue += id;
                     } else{
-                        alert('How in the earth did you get here')
+                        alert('How in the earth did you get here??')
                     }
-                }else{
+                } else{
                     operator +=id;
                 }
             } else if (isNaN(parseInt(id)) == true && operator !==''){
@@ -61,7 +61,7 @@ button.forEach(button =>{button.addEventListener('click', (event)=>{
                     secondValue+=id;
                 }
             } else{
-                alert('Thats not posible')
+                alert(`You can't concatenate operations!!!`)
             }
         }
 
