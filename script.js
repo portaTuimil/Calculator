@@ -3,7 +3,7 @@ let firstValue = '';
 let operator = '';
 let secondValue = '';
 let result = '';
-let ans = 2;
+let ans = '';
 let fvHasPoint = false;
 let svHasPoint= false;
 let fvHasAns = false;
@@ -16,6 +16,7 @@ let reScreen = document.querySelector('#result')
 
 button.forEach(button =>{button.addEventListener('click', (event)=>{
     let id = button.getAttribute('id');
+    firstValue = String(firstValue)
 
     switch (id){
         case 'AC':
@@ -40,12 +41,12 @@ button.forEach(button =>{button.addEventListener('click', (event)=>{
             } else if (operator !== ''){
                 operator = '';
             } else if (firstValue !== ''){
-                if (firstValue.charAt(firstValue.length - 1) == '.'){
+                if (String(firstValue).charAt(firstValue.length - 1) == '.'){
                     fvHasPoint= false;
                 }else if (firstValue == 'ANS'){
                     fvHasAns = false;
                 }
-                firstValue = firstValue.substring(0, firstValue.length - 1);
+                firstValue = String(firstValue).substring(0, firstValue.length -1);
             }
             break
                 
@@ -71,73 +72,95 @@ button.forEach(button =>{button.addEventListener('click', (event)=>{
                 if (!svHasAns){
                     secondValue += id;
                 }
-            }
-            break
-        }
-        
-        
-            /*default:
-            if (isNaN(parseInt(id)) == false && operator ==''){
-                firstValue += id;
-            } else if (isNaN(parseInt(id)) == false && operator !==''){
-                secondValue+= id;
             } else if (isNaN(parseInt(id)) == true && operator ==''){
-                if (id == '.'){
-                    if (operator == '' && fvHasPoint== false){
+                if (id == '.'){  
+                    if (fvHasPoint == false){
                         firstValue += id;
-                        fvHasPoint = true;
-                    } else if (svHasPoint== false){
-                        secondValue += id;
-                        svHasPoint = true;
+                        fvHasPoint = true; 
                     }
+                } else if(id == '='){
+                    
                 } else{
                     operator +=id;
                 }
-            } else if (isNaN(parseInt(id)) == true && operator !==''){
-                if (id == '.'){
-                    secondValue+=id;
+            } else if(isNaN(parseInt(id)) == true && operator !==''){
+                if (id == '.'  ){
+                    if (svHasPoint == false){
+                        secondValue+=id;
+                        svHasPoint = true;
+                    }
+                }else if(id == '='){
+                    firstValue = result;
+                    operator = ''
+                    secondValue = '';
+                    result = '';
+                    svHasPoint= false;
+                    svHasAns = false;
+                    fvHasPoint = false;
+                    fvHasAns = false;
+                    if (firstValue % 1 != 0){
+                        fvHasPoint = true;
+                    }
+                }else{
+                    firstValue = result;
+                    operator = id;
+                    secondValue = '';
+                    result = '';
+                    svHasPoint= false;
+                    svHasAns = false;
+                    fvHasPoint = false;
+                    fvHasAns = false;
+                    if (firstValue % 1 != 0){
+                        fvHasPoint = true;
+                    }
                 }
-            } else{
-                alert(`You can't concatenate operations!!!`)
-            }
+            } 
+            break
         }
 
-    //Pantalla
+    let fValue = firstValue;
+    let sValue = secondValue;
+
+    if (firstValue == 'ANS'){
+        fValue = ans;
+    }
+
+    if (secondValue == 'ANS'){
+        sValue = ans;
+    }
+
+    //Screen
     switch (operator){
          case '+':
-            result = parseFloat(firstValue) + parseFloat(secondValue)
+            result = parseFloat(fValue) + parseFloat(sValue);
             break
         case '-':
-            result = parseFloat(firstValue) - parseFloat(secondValue)
+            result = parseFloat(fValue) - parseFloat(sValue);
             break
         case '*':
-            result = parseFloat(firstValue) * parseFloat(secondValue)
+            result = parseFloat(fValue) * parseFloat(sValue);
             break
         case '/':
-            result = parseFloat(firstValue) / parseFloat(secondValue)
+            result = parseFloat(fValue) / parseFloat(sValue);
             break
         case '^':
-            result = parseFloat(firstValue) ** parseFloat(secondValue)
+            result = parseFloat(fValue) ** parseFloat(sValue);
             break
         case '%':
-            result = parseFloat(firstValue) % parseFloat(secondValue)
+            result = parseFloat(fValue) % parseFloat(sValue);
             break
         case '=':
             ans = result;
             break
-    }*/
-
-
-
-
-
+    }
 
     if (isNaN(result)){
-        result =''
+        result ='';
     }
-    console.log(firstValue)
-    console.log(operator)
-    console.log(secondValue)
+
+    console.log(firstValue);
+    console.log(operator);
+    console.log(secondValue);
     calcScreen.textContent = firstValue+operator+secondValue;
     reScreen.textContent = result;
-})})
+})});
