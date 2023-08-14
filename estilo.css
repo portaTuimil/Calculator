@@ -104,5 +104,10 @@ body {
     #calculator{
         height: 100vh;
         box-sizing: border-box;
+        width: 100vw;
+    }
+
+    body{
+        background-color: #3c3c3c;
     }
 }
