@@ -36,6 +36,7 @@ button.forEach(button =>{button.addEventListener('click', (event)=>{
             if (secondValue !== ''){
                 if (secondValue.charAt(secondValue.length - 1) == '.'){
                     svHasPoint = false;
+                    secondValue = secondValue.substring(0, secondValue.length - 1);
             } else if (secondValue == 'ANS' || secondValue == 'π' || secondValue == 'e'){
                     svSpecialCharacter = false;
                     secondValue = '';
@@ -47,6 +48,7 @@ button.forEach(button =>{button.addEventListener('click', (event)=>{
             } else if (firstValue !== ''){
                 if (String(firstValue).charAt(firstValue.length - 1) == '.'){
                     fvHasPoint= false;
+                    firstValue = String(firstValue).substring(0, firstValue.length -1);
                 }else if (firstValue == 'ANS' || firstValue == 'π' || firstValue == 'e'){
                     fvSpecialCharacter = false;
                     firstValue = '';
