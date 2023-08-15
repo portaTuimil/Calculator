@@ -15,10 +15,14 @@ let reScreen = document.querySelector('#result')
 
 button.forEach(button =>{button.addEventListener('click', (event)=>{
     let id = button.getAttribute('id');
-    firstValue = String(firstValue)
-    let rawWidth = document.querySelector('#calculator-screen')
-    let screenWidth = Math.floor(rawWidth.clientWidth/23.73)
-    let resultWidth = Math.floor(rawWidth.clientWidth/13.58)
+    firstValue = String(firstValue);
+
+    let screenFont = parseInt(getComputedStyle(calcScreen).fontSize, 10);
+    let resultFont = parseInt(getComputedStyle(reScreen).fontSize, 10);
+    let rawWidth = document.querySelector('#calculator-screen');
+    let screenWidth = Math.floor(rawWidth.clientWidth/(screenFont/2.1));
+    let resultWidth = Math.floor(rawWidth.clientWidth/(resultFont/2.1));
+    console.log(screenFont)
 
     switch (id){
         case 'AC':
