@@ -18,6 +18,7 @@ button.forEach(button =>{button.addEventListener('click', (event)=>{
     firstValue = String(firstValue)
     let rawWidth = document.querySelector('#calculator-screen')
     let screenWidth = Math.floor(rawWidth.clientWidth/23.73)
+    let resultWidth = Math.floor(rawWidth.clientWidth/13.58)
 
     switch (id){
         case 'AC':
@@ -197,7 +198,13 @@ button.forEach(button =>{button.addEventListener('click', (event)=>{
     if (isNaN(result)){
         result ='';
     }
+    let resultDisplayed = '';
+    if (result == ''){
+        
+    } else{
+        resultDisplayed = (result.toPrecision(resultWidth - 8)).replace(/(\.0+|0+)$/, '');
+    }
 
     calcScreen.textContent = (firstValue+operator+secondValue).slice(-screenWidth);
-    reScreen.textContent = result;
+    reScreen.textContent = resultDisplayed;
 })});
