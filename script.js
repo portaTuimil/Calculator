@@ -13,12 +13,11 @@ let button = document.querySelectorAll('.button');
 let calcScreen = document.querySelector('#screen');
 let reScreen = document.querySelector('#result')
 
-rawWidth = document.querySelector('#calculator-screen')
-screenWidth = Math.floor(rawWidth.clientWidth/23.73)
-
 button.forEach(button =>{button.addEventListener('click', (event)=>{
     let id = button.getAttribute('id');
     firstValue = String(firstValue)
+    let rawWidth = document.querySelector('#calculator-screen')
+    let screenWidth = Math.floor(rawWidth.clientWidth/23.73)
 
     switch (id){
         case 'AC':

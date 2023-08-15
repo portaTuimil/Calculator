@@ -100,7 +100,7 @@ body {
     text-align:right;
 }
 
-@media(max-width: 600px){
+@media(orientation:portrait){
     #calculator{
         height: 100vh;
         box-sizing: border-box;
