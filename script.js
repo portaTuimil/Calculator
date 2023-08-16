@@ -22,7 +22,6 @@ button.forEach(button =>{button.addEventListener('click', (event)=>{
     let rawWidth = document.querySelector('#calculator-screen');
     let screenWidth = Math.floor(rawWidth.clientWidth/(screenFont/2.1));
     let resultWidth = Math.floor(rawWidth.clientWidth/(resultFont/2.1));
-    console.log(screenFont)
 
     switch (id){
         case 'AC':
